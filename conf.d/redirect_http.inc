@@ -1,5 +1,4 @@
-## Contents of /etc/nginx/conf.d/redirect_http.inc
-
+# redirect to https
 location / {
-        return 301 https://$host$request_uri;
+	return 301 https://$host$request_uri;
 }
