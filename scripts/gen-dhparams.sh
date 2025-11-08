@@ -1,3 +1,4 @@
 #!/bin/sh
 set -e
-exec openssl dhparam -dsaparam -out /etc/nginx/dhparam.pem 4096
+cd "$(dirname ${0})"
+exec openssl dhparam -dsaparam -out ./dhparam.pem 4096

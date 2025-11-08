@@ -1,14 +1,8 @@
-## Contents of /etc/nginx/conf.d/ssl-params.inc
 # secure nginx, see https://cipherli.st/
 
-ssl_protocols TLSv1.3; # Requires nginx >= 1.13.0 else use TLSv1.2
-#ssl_protocols TLSv1.2; # We use TLSv1.2 because current stable nginx release don't support TLSv1.3 yet
 ssl_prefer_server_ciphers on;
-ssl_dhparam /etc/nginx/dhparam.pem; # openssl dhparam -out /etc/nginx/dhparam.pem 4096
 ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH";
 ssl_ecdh_curve secp384r1; # Requires nginx >= 1.1.0
-ssl_session_cache shared:SSL:10m;
-ssl_session_tickets off; # Requires nginx >= 1.5.9
 ssl_stapling on; # Requires nginx >= 1.3.7
 ssl_stapling_verify on; # Requires nginx => 1.3.7
 resolver 9.9.9.9 1.1.1.1 valid=300s;
