@@ -12,6 +12,7 @@
 #	proxy_pass  http://localhost:3000/;
 #}
 # pihole
+#location = /pihole/ { return 302 /pihole/admin/login; }
 #location /pihole/ {
 #	include conf.d/proxy_set_header.inc;
 #	proxy_pass  http://localhost:8053/;
