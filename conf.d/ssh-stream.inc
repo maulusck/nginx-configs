@@ -4,3 +4,4 @@ upstream ssh {
 server {
 	listen 22;
 	proxy_pass ssh;
+}
